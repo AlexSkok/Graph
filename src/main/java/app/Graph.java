@@ -53,9 +53,25 @@ public class Graph {
         }
     }
 //    has vertex--------
-    public void hasVertex(int vertex){
-
+    public boolean hasVertex(int vertex){
+        if (adjacencyList.containsKey(vertex)) {
+            System.out.println("Граф містить вершину " + vertex);
+            return true;
+        } else {
+            System.out.println("Граф не містить вершини " + vertex);
+            return false;
+        }
     }
+//    has edge
+public boolean hasEdge(int source, int destination){
+    if (adjacencyList.containsKey(source) && adjacencyList.get(source).contains(destination)) {
+        System.out.println("Граф містить рубро " + "[" + source +", " + destination + "]");
+        return true;
+    } else {
+        System.out.println("Граф не містить ребра " + "[" + source +", " + destination + "]");
+        return false;
+    }
+}
 
     public void displayGraph(){
         for (Map.Entry<Integer, List<Integer>> element : adjacencyList.entrySet()){

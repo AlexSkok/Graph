@@ -20,6 +20,10 @@ public class Main {
         graph.displayGraph();
         graph.removeVertex(8);
         graph.removeEdge(2, 3);
+        graph.hasVertex(1);
+        graph.hasEdge(1, 2);
+        graph.hasEdge(2, 5);
+        graph.removeEdge(2, 5);
         graph.displayGraph();
     }
 }
