@@ -11,6 +11,7 @@ public class Graph {
     public Graph() {
         this.adjacencyList = new HashMap<>();
     }
+//    add vertex----------
     public void addVertex(int vertex){
         if (!adjacencyList.containsKey(vertex)){
             adjacencyList.put(vertex, new ArrayList<>());
@@ -19,10 +20,25 @@ public class Graph {
             System.out.println("Вершина " + vertex + " вжу існує");
         }
     }
+//    add edge------------
+    public void addEdge(int source, int destination){
+        if (!adjacencyList.containsKey(source)){
+            addVertex(source);
+        }
+        if (!adjacencyList.containsKey(destination)){
+            addVertex(destination);
+        }
+        if (!adjacencyList.get(source).contains(destination)){
+            adjacencyList.get(source).add(destination);
+        }
+        if (!adjacencyList.get(destination).contains(source)){
+            adjacencyList.get(destination).add(source);
+        }
+    }
 
-    private void displayGraph(){
+    public void displayGraph(){
         for (Map.Entry<Integer, List<Integer>> element : adjacencyList.entrySet()){
-            System.out.println(element.getValue() + " : " + element.getValue());
+            System.out.println(element.getKey() + " : " + element.getValue());
         }
     }
 }
