@@ -45,11 +45,13 @@ public class Graph {
     }
 //    remove edge--------
     public void removeEdge(int source, int destination){
-        if (adjacencyList.containsKey(source) && adjacencyList.get(source).contains(destination)){
-            adjacencyList.get(source).remove(destination);
+        List<Integer> souceList = adjacencyList.get(source);
+        List<Integer> destinationList = adjacencyList.get(destination);
+        if (souceList != null){
+            souceList.remove(Integer.valueOf(destination));
         }
-        if (adjacencyList.containsKey(destination) && adjacencyList.get(destination).contains(source)){
-            adjacencyList.get(destination).remove(source);
+        if (destinationList != null){
+            destinationList.remove(Integer.valueOf(source));
         }
     }
 //    has vertex--------
@@ -72,7 +74,7 @@ public boolean hasEdge(int source, int destination){
         return false;
     }
 }
-
+//DISPLAY GRAPH
     public void displayGraph(){
         for (Map.Entry<Integer, List<Integer>> element : adjacencyList.entrySet()){
             System.out.println(element.getKey() + " : " + element.getValue());
