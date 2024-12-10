@@ -15,5 +15,7 @@ public class Main {
         graph.addEdge(3, 6);
         graph.addEdge(3, 5);
         graph.displayGraph();
+        graph.removeVertex(8);
+        graph.displayGraph();
     }
 }

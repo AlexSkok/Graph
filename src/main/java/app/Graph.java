@@ -35,6 +35,15 @@ public class Graph {
             adjacencyList.get(destination).add(source);
         }
     }
+//    remove vertex-------
+    public void  removeVertex(int vertex){
+        for (int neighbor : adjacencyList.get(vertex)){
+            adjacencyList.get(neighbor).remove(vertex);
+        }
+        adjacencyList.remove(vertex);
+        System.out.println("Vertex " + vertex + " is deleted");
+    }
+
 
     public void displayGraph(){
         for (Map.Entry<Integer, List<Integer>> element : adjacencyList.entrySet()){
