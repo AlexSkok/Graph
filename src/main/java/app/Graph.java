@@ -43,7 +43,19 @@ public class Graph {
         adjacencyList.remove(vertex);
         System.out.println("Vertex " + vertex + " is deleted");
     }
+//    remove edge--------
+    public void removeEdge(int source, int destination){
+        if (adjacencyList.containsKey(source) && adjacencyList.get(source).contains(destination)){
+            adjacencyList.get(source).remove(destination);
+        }
+        if (adjacencyList.containsKey(destination) && adjacencyList.get(destination).contains(source)){
+            adjacencyList.get(destination).remove(source);
+        }
+    }
+//    has vertex--------
+    public void hasVertex(int vertex){
 
+    }
 
     public void displayGraph(){
         for (Map.Entry<Integer, List<Integer>> element : adjacencyList.entrySet()){

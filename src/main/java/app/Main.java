@@ -14,8 +14,12 @@ public class Main {
         graph.addEdge(2, 5);
         graph.addEdge(3, 6);
         graph.addEdge(3, 5);
+        graph.addEdge(1, 7);
+        graph.addEdge(4, 2);
+
         graph.displayGraph();
         graph.removeVertex(8);
+        graph.removeEdge(2, 3);
         graph.displayGraph();
     }
 }
